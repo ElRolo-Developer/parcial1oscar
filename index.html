@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu futuro en Tecnología | UTS Santander</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Hero Section Gradient */
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6, #9333ea);
+        }
+
+        /* Botones mejorados */
+        .cta-button {
+            background-color: #ff6363;
+            color: white;
+            padding: 16px 32px;
+            font-size: 18px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e02424;
+            transform: scale(1.05);
+        }
+
+        /* Animaciones para los elementos */
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white text-center py-24">
+        <h1 class="text-4xl font-extrabold leading-tight md:text-5xl mb-6">"Construye el futuro con cada línea de código creando soluciones innovadoras"</h1>
+        <p class="mt-4 text-lg md:text-xl">Lleva tus ideas al siguiente nivel en el programa de Tecnología en Desarrollo de Sistemas Informáticos</p>
+        <a href="#test" class="mt-8 inline-block cta-button">Comienza tu aventura</a>
+    </section>
+
+    <!-- Interactive Test Section -->
+    <section id="test" class="py-24 px-4 bg-white">
+        <h2 class="text-3xl font-bold text-center mb-12">¿Qué camino quieres seguir?</h2>
+        <div class="flex justify-center space-x-6 md:space-x-12">
+            <button id="webDev" class="w-1/3 bg-green-500 text-white py-6 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg">Desarrollo Web</button>
+            <button id="software" class="w-1/3 bg-purple-500 text-white py-6 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg">Software</button>
+            <button id="ai" class="w-1/3 bg-orange-500 text-white py-6 rounded-lg transform hover:scale-105 transition-all duration-300 shadow-lg">IA</button>
+        </div>
+        <div id="response" class="mt-10 text-center text-xl font-semibold hidden"></div>
+
+        <!-- Imagen de Camino Seleccionado -->
+        <div id="webDevImage" class="mt-8 hidden">
+            <img src="imagenes/desarrollo_web.jpg" alt="Desarrollo Web" class="mx-auto rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        </div>
+        <div id="softwareImage" class="mt-8 hidden">
+            <img src="imagenes/desarrollo_software.jpg" alt="Software" class="mx-auto rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        </div>
+        <div id="aiImage" class="mt-8 hidden">
+            <img src="imagenes/ia.jpg" alt="IA" class="mx-auto rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 bg-gray-200">
+        <h2 class="text-3xl font-bold text-center mb-12">Lo que dicen nuestros estudiantes</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
+            <div class="card p-8 bg-white rounded-lg shadow-lg">
+                <p>"El programa de UTS me ha ayudado a convertir mi pasión por la tecnología en una carrera. ¡Los profesores son excelentes!"</p>
+                <p class="mt-4 font-semibold text-lg">- María P.</p>
+            </div>
+            <div class="card p-8 bg-white rounded-lg shadow-lg">
+                <p>"La experiencia práctica en proyectos reales fue clave para mi aprendizaje. Ahora trabajo en mi sueño."</p>
+                <p class="mt-4 font-semibold text-lg">- Carlos G.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-24 text-center">
+        <h2 class="text-3xl font-bold mb-4">¿Listo para dar el siguiente paso?</h2>
+        <p class="text-lg mb-6">Da el primer paso hacia tu carrera tecnológica</p>
+        <p class="text-lg mb-7">"¡Únete hoy y comienza a codificar el futuro!".</p>
+        <a href="#inscripcion" class="cta-button">¡Inscríbete ahora!</a>
+    </section>
+
+    <script>
+        document.getElementById('webDev').onclick = function () {
+            document.getElementById('response').innerText = "¡Genial! El desarrollo web te permite crear experiencias increíbles en la red. ¡Empieza a aprender hoy!";
+            document.getElementById('response').classList.remove('hidden');
+
+            // Mostrar imagen de Desarrollo Web
+            document.getElementById('webDevImage').classList.remove('hidden');
+            document.getElementById('softwareImage').classList.add('hidden');
+            document.getElementById('aiImage').classList.add('hidden');
+        };
+
+        document.getElementById('software').onclick = function () {
+            document.getElementById('response').innerText = "¡Excelente elección! El software es el corazón de la tecnología moderna. ¡Prepara tu mente para innovar!";
+            document.getElementById('response').classList.remove('hidden');
+
+            // Mostrar imagen de Software
+            document.getElementById('softwareImage').classList.remove('hidden');
+            document.getElementById('webDevImage').classList.add('hidden');
+            document.getElementById('aiImage').classList.add('hidden');
+        };
+
+        document.getElementById('ai').onclick = function () {
+            document.getElementById('response').innerText = "¡Fascinante! La inteligencia artificial está cambiando el mundo. ¡Únete a esta revolución tecnológica!";
+            document.getElementById('response').classList.remove('hidden');
+
+            // Mostrar imagen de IA
+            document.getElementById('aiImage').classList.remove('hidden');
+            document.getElementById('webDevImage').classList.add('hidden');
+            document.getElementById('softwareImage').classList.add('hidden');
+        };
+    </script>
+</body>
+
+</html>
